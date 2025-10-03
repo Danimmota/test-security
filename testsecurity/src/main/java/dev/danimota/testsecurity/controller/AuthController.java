@@ -44,6 +44,7 @@ public class AuthController {
         return ResponseEntity.ok(new LoginResponse(token));
     }
 
+    @PostMapping("/register")
     public ResponseEntity<RegisterUserResponse> register(@Valid @RequestBody RegisterUserRequest request) {
         User newUser = new User();
         newUser.setPassword(passwordEncoder.encode(request.password()));
